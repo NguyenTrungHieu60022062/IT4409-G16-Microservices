@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Đăng ký — Sprylo</title>
+  <meta name="description" content="Tạo tài khoản Sprylo miễn phí để mua sắm đồ công nghệ nhanh và an toàn hơn." />
+  <meta name="theme-color" content="#4F46E5" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Outfit:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/auth.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Bỏ qua tới nội dung</a>
+
+  <div class="utility"><div class="container"><span class="promo"><span class="tag">SALE</span>Miễn phí vận chuyển cho đơn từ 500.000₫ · Đổi trả trong 30 ngày</span><span class="links"><a href="#">Tra cứu đơn hàng</a><a href="#">Trợ giúp</a><a href="#">VI · VND</a></span></div></div>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand"><span class="brand-mark">S</span> Sprylo</a>
+      <form class="search" role="search" action="shop.html">
+        <input type="search" name="q" maxlength="100" placeholder="Tìm sản phẩm, thương hiệu, danh mục…" aria-label="Tìm kiếm sản phẩm" />
+        <button type="submit" aria-label="Tìm kiếm"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></button>
+      </form>
+      <div class="icon-row">
+        <a href="account.html" class="icon-btn" aria-label="Tài khoản"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></a>
+        <a href="#" class="icon-btn" aria-label="Yêu thích"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></a>
+        <a href="cart.html" class="icon-btn icon-btn--cart" aria-label="Giỏ hàng"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2l-2 5v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7l-2-5z"/><path d="M4 7h16"/><path d="M16 11a4 4 0 0 1-8 0"/></svg></a>
+        <button class="nav-toggle" aria-label="Mở menu" aria-expanded="false">≡</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav-bar" aria-label="Điều hướng chính">
+    <div class="container">
+      <a href="shop.html" class="all-cats"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>Tất cả danh mục</a>
+      <div class="main-nav">
+        <a href="index.html">Trang chủ</a><a href="shop.html">Cửa hàng</a>
+        <a href="product.html">Sản phẩm</a><a href="cart.html">Giỏ hàng</a>
+        <a href="contact.html">Liên hệ</a>
+      </div>
+      <span class="nav-cta">GIẢM ĐẾN <strong>60%</strong> MỌI SẢN PHẨM</span>
+    </div>
+  </nav>
+
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-head"><a href="index.html" class="brand"><span class="brand-mark">S</span> Sprylo</a><button class="drawer-close">Đóng ✕</button></div>
+    <a href="index.html">Trang chủ</a><a href="shop.html">Cửa hàng</a><a href="product.html">Sản phẩm</a><a href="cart.html">Giỏ hàng</a><a href="contact.html">Liên hệ</a><a href="account.html">Tài khoản</a>
+  </div>
+
+  <main id="main">
+    <section class="auth-section">
+      <div class="container">
+        <div class="auth-shell">
+
+          <aside class="auth-aside">
+            <div>
+              <span class="eyebrow">THÀNH VIÊN MỚI</span>
+              <h2>Tạo tài khoản, mua sắm nhanh hơn.</h2>
+              <p>Chỉ cần email và mật khẩu. Thông tin cá nhân và địa chỉ có thể bổ sung sau trong trang tài khoản.</p>
+            </div>
+            <ul class="perk-list">
+              <li><span class="ic">⚡</span><span><strong>Thanh toán nhanh</strong><span class="sub">Lưu sẵn địa chỉ, không phải nhập lại</span></span></li>
+              <li><span class="ic">🎁</span><span><strong>Ưu đãi thành viên</strong><span class="sub">Nhận mã giảm giá và thông báo khuyến mãi sớm</span></span></li>
+              <li><span class="ic">🛡</span><span><strong>Dữ liệu được bảo vệ</strong><span class="sub">Không bán hay chia sẻ dữ liệu cho bên thứ ba</span></span></li>
+            </ul>
+          </aside>
+
+          <div class="auth-main">
+            <div class="crumbs"><a href="index.html">Trang chủ</a> <span class="sep">›</span> <span>Đăng ký</span></div>
+            <h1>Tạo tài khoản</h1>
+            <p class="lead">Đã có tài khoản? <a class="link" href="login.html">Đăng nhập</a></p>
+
+            <div id="form-alert" class="alert" hidden></div>
+            <p id="after-register" class="auth-switch" hidden><a href="login.html">Đi tới trang đăng nhập →</a></p>
+
+            <form id="register-form" novalidate>
+              <div class="field">
+                <label for="reg-email">Email</label>
+                <input id="reg-email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="254" required placeholder="ban@example.com" />
+              </div>
+
+              <div class="field">
+                <label for="reg-password">Mật khẩu</label>
+                <div class="pw-wrap">
+                  <input id="reg-password" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="128" required aria-describedby="pw-hint" />
+                  <button type="button" class="pw-toggle" data-target="reg-password" aria-label="Hiện mật khẩu" aria-pressed="false">HIỆN</button>
+                </div>
+                <div class="meter" id="pw-meter" data-score="0" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+                <span class="hint" id="pw-hint" aria-live="polite"></span>
+              </div>
+
+              <div class="field">
+                <label for="reg-confirm">Nhập lại mật khẩu</label>
+                <div class="pw-wrap">
+                  <input id="reg-confirm" name="confirm" type="password" autocomplete="new-password" maxlength="128" required />
+                  <button type="button" class="pw-toggle" data-target="reg-confirm" aria-label="Hiện mật khẩu" aria-pressed="false">HIỆN</button>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="check" for="reg-terms"><input id="reg-terms" name="terms" type="checkbox" required /> Tôi đồng ý với <a class="link" href="#">Điều khoản sử dụng</a> và <a class="link" href="#">Chính sách quyền riêng tư</a>.</label>
+              </div>
+
+              <button class="btn btn--indigo btn--block btn--submit" type="submit">Tạo tài khoản →</button>
+            </form>
+
+            <p class="secure-note">Mẹo: dùng một cụm từ dài, dễ nhớ (VD: "ca-phe-sang-thu-hai-2026") và không dùng lại mật khẩu của trang khác.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="mark"><span class="brand-mark">S</span> Sprylo</div>
+          <p>Đồ công nghệ chính hãng — giao nhanh, hỗ trợ tận tâm.</p>
+        </div>
+        <div class="footer-col"><h4>Danh mục nổi bật</h4><ul>
+          <li><a href="shop.html">Laptop &amp; PC</a></li><li><a href="shop.html">Nhà thông minh</a></li>
+          <li><a href="shop.html">Đồng hồ thông minh</a></li><li><a href="shop.html">Tai nghe</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Hỗ trợ khách hàng</h4><ul>
+          <li><a href="account.html">Tài khoản của tôi</a></li><li><a href="#">Đơn hàng của tôi</a></li>
+          <li><a href="#">Chính sách vận chuyển</a></li><li><a href="#">Trung tâm trợ giúp</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Tài nguyên</h4><ul>
+          <li><a href="#">Blog</a></li><li><a href="#">Bản tin</a></li>
+          <li><a href="#">Hỗ trợ</a></li><li><a href="#">Đánh giá</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Về chúng tôi</h4><ul>
+          <li><a href="#">Giới thiệu</a></li><li><a href="contact.html">Liên hệ</a></li>
+          <li><a href="#">Điều khoản</a></li><li><a href="#">Quyền riêng tư</a></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Sprylo · IT4409 — Nhóm 16</span>
+        <span>Microservices · Spring Boot</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/mock-api.js" defer></script>
+  <script src="assets/js/api.js" defer></script>
+  <script src="assets/js/common.js" defer></script>
+  <script src="assets/js/auth.js" defer></script>
+</body>
+</html>
