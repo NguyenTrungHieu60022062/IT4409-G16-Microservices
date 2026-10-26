@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quản lý thanh toán - Hoàng Đức Vinh</title>
+<link rel="stylesheet" href="payment.css">
+</head>
+<body>
+<header class="topbar"><div class="brand">Hoàng Đức Vinh <span>| Thanh toán</span></div><div class="user">Xin chào, Hoàng Đức Vinh</div></header>
+<main class="container">
+<div class="heading"><div><p class="eyebrow">TRUNG TÂM QUẢN LÝ</p><h1>Thanh toán</h1><p class="muted">Theo dõi giao dịch, xác nhận thanh toán và hoàn tiền</p></div><button class="primary" type="button">+ Tạo mới</button></div>
+<div class="stats"><article><span>Tổng giao dịch</span><strong>128</strong></article><article><span>Đã thanh toán</span><strong class="green">96</strong></article><article><span>Đang chờ</span><strong class="orange">18</strong></article><article><span>Đã hoàn tiền</span><strong>14</strong></article></div>
+<section class="panel"><h2>Tra cứu giao dịch</h2><div class="filters"><label>Mã giao dịch<input placeholder="Nhập mã giao dịch"></label><label>Mã đơn hàng<input placeholder="VD: DH001"></label><label>Phương thức<select><option>Tất cả phương thức</option><option>COD</option><option>Ví điện tử</option><option>Thẻ ngân hàng</option></select></label><label>Trạng thái<select><option>Tất cả trạng thái</option><option>Thành công</option><option>Đang chờ</option><option>Đã hoàn tiền</option></select></label><button class="primary">Tìm kiếm</button></div></section>
+<section class="panel"><h2>Danh sách giao dịch</h2><div class="table-wrap"><table><thead><tr><th>Mã giao dịch</th><th>Mã đơn hàng</th><th>Khách hàng</th><th>Phương thức</th><th>Số tiền</th><th>Trạng thái</th><th>Thao tác</th></tr></thead><tbody>
+<tr><td>GD1001</td><td>DH001</td><td>Nguyễn Văn An</td><td>Ví điện tử</td><td class="price">542.000₫</td><td><span class="status success">Thành công</span></td><td><button class="link">Chi tiết</button></td></tr>
+<tr><td>GD1002</td><td>DH002</td><td>Trần Minh Anh</td><td>COD</td><td class="price">159.000₫</td><td><span class="status waiting">Đang chờ</span></td><td><button class="link">Xác nhận</button></td></tr>
+<tr><td>GD1003</td><td>DH003</td><td>Lê Thu Hà</td><td>Thẻ ngân hàng</td><td class="price">129.000₫</td><td><span class="status refunded">Đã hoàn tiền</span></td><td><button class="link">Chi tiết</button></td></tr>
+<tr><td>GD1004</td><td>DH004</td><td>Phạm Quang Huy</td><td>Ví điện tử</td><td class="price">320.000₫</td><td><span class="status success">Thành công</span></td><td><button class="link">Chi tiết</button></td></tr>
+</tbody></table></div></section>
+<footer>© 2026 Hoàng Đức Vinh · Hệ thống quản lý bán hàng</footer>
+</main>
+</body>
+</html>

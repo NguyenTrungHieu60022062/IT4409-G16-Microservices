@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trung tâm thông báo - Hoàng Đức Vinh</title>
+<link rel="stylesheet" href="notification.css">
+</head>
+<body>
+<header class="topbar"><div class="brand">Hoàng Đức Vinh <span>| Thông báo</span></div><div class="user">Xin chào, Hoàng Đức Vinh</div></header>
+<main class="container">
+<div class="heading"><div><p class="eyebrow">TRUNG TÂM QUẢN LÝ</p><h1>Thông báo</h1><p class="muted">Quản lý thông báo và email xác nhận đơn hàng</p></div><button class="primary" type="button">+ Tạo mới</button></div>
+<div class="stats"><article><span>Tổng thông báo</span><strong>256</strong></article><article><span>Đã gửi</span><strong class="green">231</strong></article><article><span>Đang chờ gửi</span><strong class="orange">15</strong></article><article><span>Gửi thất bại</span><strong class="red">10</strong></article></div>
+<section class="panel"><h2>Tạo thông báo mới</h2><div class="form"><label>Loại thông báo<select><option>Xác nhận đơn hàng</option><option>Thanh toán thành công</option><option>Cập nhật vận chuyển</option><option>Khuyến mãi</option></select></label><label>Người nhận<input type="email" placeholder="email@example.com"></label><label class="full">Tiêu đề<input placeholder="Nhập tiêu đề thông báo"></label><label class="full">Nội dung<textarea rows="3" placeholder="Nhập nội dung thông báo hoặc email"></textarea></label><div class="actions full"><button class="secondary">Làm mới</button><button class="primary">Gửi thông báo</button></div></div></section>
+<section class="panel"><h2>Lịch sử thông báo</h2>
+<div class="notice"><div class="notice-icon">✓</div><div class="notice-body"><b>Xác nhận đơn hàng DH001 <span class="status success">Đã gửi</span></b><p>Email xác nhận đã gửi đến nguyenvana@example.com</p><small>23/10/2026 · 09:35 · Mã TB001</small></div><button class="link">Chi tiết</button></div>
+<div class="notice"><div class="notice-icon blue">↗</div><div class="notice-body"><b>Cập nhật vận chuyển DH002 <span class="status success">Đã gửi</span></b><p>Thông báo đơn hàng đang được vận chuyển đến khách hàng</p><small>23/10/2026 · 09:10 · Mã TB002</small></div><button class="link">Chi tiết</button></div>
+<div class="notice"><div class="notice-icon green">₫</div><div class="notice-body"><b>Thanh toán thành công DH003 <span class="status waiting">Đang chờ</span></b><p>Thông báo xác nhận thanh toán đang chờ hệ thống xử lý</p><small>23/10/2026 · 08:55 · Mã TB003</small></div><button class="link">Chi tiết</button></div>
+<div class="notice"><div class="notice-icon red">!</div><div class="notice-body"><b>Email chưa gửi được DH004 <span class="status failed">Thất bại</span></b><p>Kiểm tra địa chỉ người nhận và thử gửi lại</p><small>22/10/2026 · 17:40 · Mã TB004</small></div><button class="link">Gửi lại</button></div></section>
+<footer>© 2026 Hoàng Đức Vinh · Hệ thống quản lý bán hàng</footer>
+</main>
+</body>
+</html>

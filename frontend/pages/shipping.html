@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quản lý vận chuyển - Hoàng Đức Vinh</title>
+<link rel="stylesheet" href="shipping.css">
+</head>
+<body>
+<header class="topbar"><div class="brand">Hoàng Đức Vinh <span>| Vận chuyển</span></div><div class="user">Xin chào, Hoàng Đức Vinh</div></header>
+<main class="container">
+<div class="heading"><div><p class="eyebrow">TRUNG TÂM QUẢN LÝ</p><h1>Vận chuyển</h1><p class="muted">Theo dõi đơn giao hàng và cập nhật trạng thái vận chuyển</p></div><button class="primary" type="button">+ Tạo mới</button></div>
+<div class="stats"><article><span>Chờ lấy hàng</span><strong>12</strong></article><article><span>Đang vận chuyển</span><strong class="blue">24</strong></article><article><span>Giao thành công</span><strong class="green">86</strong></article><article><span>Giao thất bại</span><strong class="red">3</strong></article></div>
+<section class="panel"><h2>Tra cứu vận đơn</h2><div class="filters"><label>Mã vận đơn<input placeholder="Nhập mã vận đơn"></label><label>Mã đơn hàng<input placeholder="VD: DH001"></label><label>Đơn vị vận chuyển<select><option>Tất cả đơn vị</option><option>Đơn vị A</option><option>Đơn vị B</option></select></label><label>Trạng thái<select><option>Tất cả trạng thái</option><option>Chờ lấy hàng</option><option>Đang giao</option><option>Đã giao</option></select></label><button class="primary">Tìm kiếm</button></div></section>
+<section class="panel"><h2>Danh sách vận đơn</h2><div class="table-wrap"><table><thead><tr><th>Mã vận đơn</th><th>Mã đơn hàng</th><th>Người nhận</th><th>Địa chỉ</th><th>Đơn vị vận chuyển</th><th>Trạng thái</th><th>Cập nhật</th></tr></thead><tbody>
+<tr><td>VC0001</td><td>DH001</td><td>Nguyễn Văn An</td><td>Cầu Giấy, Hà Nội</td><td>Đơn vị A</td><td><span class="status waiting">Chờ lấy hàng</span></td><td><button class="link">Cập nhật</button></td></tr>
+<tr><td>VC0002</td><td>DH002</td><td>Trần Minh Anh</td><td>Đống Đa, Hà Nội</td><td>Đơn vị B</td><td><span class="status moving">Đang vận chuyển</span></td><td><button class="link">Cập nhật</button></td></tr>
+<tr><td>VC0003</td><td>DH003</td><td>Lê Thu Hà</td><td>Nam Từ Liêm, Hà Nội</td><td>Đơn vị A</td><td><span class="status success">Giao thành công</span></td><td><button class="link">Chi tiết</button></td></tr>
+<tr><td>VC0004</td><td>DH004</td><td>Phạm Quang Huy</td><td>Thanh Xuân, Hà Nội</td><td>Đơn vị B</td><td><span class="status failed">Giao thất bại</span></td><td><button class="link">Xử lý</button></td></tr>
+</tbody></table></div></section>
+<section class="panel"><h2>Hành trình vận chuyển mẫu - VC0002</h2><div class="timeline"><p>🟢 <b>Đã xác nhận đơn hàng</b><small>08:30 · 22/10/2026</small></p><p>🟢 <b>Đơn hàng đã được lấy</b><small>11:15 · 22/10/2026</small></p><p>🟠 <b>Đang vận chuyển đến kho phân loại</b><small>09:10 · 23/10/2026</small></p><p>⚪ <b>Đang giao đến người nhận</b><small>Đang chờ cập nhật</small></p></div></section>
+<footer>© 2026 Hoàng Đức Vinh · Hệ thống quản lý bán hàng</footer>
+</main>
+</body>
+</html>
