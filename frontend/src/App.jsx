@@ -1,11 +1,12 @@
-import { NavLink, Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, NavLink } from "react-router-dom";
+
 import Account from "./pages/Account.jsx";
-import CartService from "./pages/CartService.jsx";
+import CartService from "./pages/CartServices.jsx";
 import Login from "./pages/Login.jsx";
 import Notification from "./pages/Notification.jsx";
 import Order from "./pages/Order.jsx";
 import Payment from "./pages/Payment.jsx";
-import ProductInventory from "./pages/ProductInventory.jsx";
+import ProductInventory from "./pages/Product&Inventory.jsx";
 import Register from "./pages/Register.jsx";
 import Shipping from "./pages/Shipping.jsx";
 

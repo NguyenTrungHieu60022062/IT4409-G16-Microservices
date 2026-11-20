@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import "../styles/sprylo.css";
-import "../styles/pages/auth.css";
+import "../styles/auth.css";
 
 export default function Login() {
   useEffect(() => {
