@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:authtest;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ""
+
+auth:
+  allowed-origins: http://localhost:5173
+  rate-limit:
+    # Nới rộng để các test khác nhau không chặn lẫn nhau; test rate limit dùng IP riêng.
+    login-per-minute: 1000
+    register-per-hour: 1000
+    refresh-per-minute: 1000
+
+logging:
+  level:
+    AUDIT: WARN

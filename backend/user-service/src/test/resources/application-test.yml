@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:usertest;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ""
+
+user:
+  jwks-uri: http://localhost:1/unused-in-tests   # test thay JwtDecoder bằng khoá RSA cục bộ
+  pii-key: yx6EyOtOg8J47dll7QY1AcM230j8FIHLc8AgtwYURpg=

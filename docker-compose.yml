@@ -1,0 +1,99 @@
+# Chạy:  cp .env.example .env   (sửa mật khẩu)   rồi   docker compose up -d --build
+# Các service khác của nhóm thêm vào cùng file này, dùng chung network "backend".
+name: g16
+
+services:
+  postgres-auth:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: auth
+      POSTGRES_USER: auth
+      POSTGRES_PASSWORD: ${AUTH_DB_PASSWORD:?Chưa đặt AUTH_DB_PASSWORD trong file .env}
+    volumes:
+      - auth-db:/var/lib/postgresql/data
+    networks: [backend]
+    # KHÔNG publish port 5432 ra máy host: chỉ auth-service (cùng network) kết nối được DB.
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U auth -d auth"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
+  auth-service:
+    build: ./backend/auth-service
+    environment:
+      DB_URL: jdbc:postgresql://postgres-auth:5432/auth
+      DB_USER: auth
+      DB_PASSWORD: ${AUTH_DB_PASSWORD}
+      AUTH_ALLOWED_ORIGINS: ${FRONTEND_ORIGIN:-http://localhost:5173}
+      AUTH_BOOTSTRAP_ADMIN_EMAIL: ${AUTH_BOOTSTRAP_ADMIN_EMAIL:-}
+      # Khoá ký JWT cố định (khuyên dùng): bỏ comment 2 mục "secrets" bên dưới và dòng này.
+      # AUTH_JWT_PRIVATE_KEY_LOCATION: file:/run/secrets/jwt_private_key
+    # secrets: [jwt_private_key]
+    depends_on:
+      postgres-auth:
+        condition: service_healthy
+    networks: [backend]
+    # Chỉ bind vào 127.0.0.1: máy khác trong mạng LAN/wifi không gọi thẳng được.
+    # Khi có API Gateway, bỏ dòng ports này — chỉ gateway được lộ ra ngoài.
+    ports:
+      - "127.0.0.1:8081:8081"
+    # Hardening container
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    restart: unless-stopped
+
+  postgres-user:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: users
+      POSTGRES_USER: users
+      POSTGRES_PASSWORD: ${USER_DB_PASSWORD:?Chưa đặt USER_DB_PASSWORD trong file .env}
+    volumes:
+      - user-db:/var/lib/postgresql/data
+    networks: [backend]
+    # Database riêng cho User Service (database-per-service): Auth bị lộ không kéo theo dữ liệu hồ sơ.
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U users -d users"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
+  user-service:
+    build: ./backend/user-service
+    environment:
+      DB_URL: jdbc:postgresql://postgres-user:5432/users
+      DB_USER: users
+      DB_PASSWORD: ${USER_DB_PASSWORD}
+      # Lấy public key của Auth Service qua mạng nội bộ Docker
+      AUTH_JWKS_URI: http://auth-service:8081/.well-known/jwks.json
+      USER_ALLOWED_ORIGINS: ${FRONTEND_ORIGIN:-http://localhost:5173}
+      USER_PII_KEY: ${USER_PII_KEY:?Chưa đặt USER_PII_KEY trong file .env (openssl rand -base64 32)}
+    depends_on:
+      postgres-user:
+        condition: service_healthy
+      auth-service:
+        condition: service_started
+    networks: [backend]
+    ports:
+      - "127.0.0.1:8082:8082"
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    restart: unless-stopped
+
+# secrets:
+#   jwt_private_key:
+#     file: ./secrets/jwt-private.pem   # tạo bằng: openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:3072 -out secrets/jwt-private.pem
+
+networks:
+  backend:
+
+volumes:
+  auth-db:
+  user-db:

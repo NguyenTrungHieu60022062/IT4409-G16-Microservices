@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/users}
+    username: ${DB_USER:users}
+    password: ${DB_PASSWORD:}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    # {vendor} = postgresql | h2 -> migration riêng cho từng loại DB (vd partial unique index chỉ có ở Postgres)
+    locations: classpath:db/migration,classpath:db/vendor/{vendor}
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true   # gửi "userId", "role"... -> 400 (chống mass assignment)
+
+server:
+  port: ${PORT:8082}
+  error:
+    include-message: never
+    include-stacktrace: never
+    include-binding-errors: never
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: never
+
+user:
+  # JWT do Auth Service cấp: tải public key từ JWKS, kiểm iss + aud + exp, chỉ nhận RS256.
+  jwks-uri: ${AUTH_JWKS_URI:http://localhost:8081/.well-known/jwks.json}
+  issuer: ${AUTH_ISSUER:g16-auth-service}
+  audience: ${AUTH_AUDIENCE:g16-api}
+  allowed-origins: ${USER_ALLOWED_ORIGINS:http://localhost:5173}
+  max-addresses: 10
+  # Khoá AES-256 (base64 của 32 byte) để mã hoá số điện thoại. BẮT BUỘC đặt qua biến môi trường.
+  # Tạo:  openssl rand -base64 32
+  pii-key: ${USER_PII_KEY:}
