@@ -1,0 +1,12 @@
+# Profile "local": chạy thử không cần Docker/PostgreSQL.
+#   ./mvnw spring-boot:run -Dspring-boot.run.profiles=local
+# Cần Auth Service đang chạy ở localhost:8081 (để lấy JWKS).
+spring:
+  datasource:
+    url: jdbc:h2:file:./data/users;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH
+    username: sa
+    password: ""
+
+user:
+  # KHOÁ CHỈ DÙNG CHO MÁY DEV. Đã công khai trong git -> tuyệt đối không dùng ở môi trường thật.
+  pii-key: ${USER_PII_KEY:ZGV2LW9ubHkta2V5LWRvLW5vdC11c2UtaW4tcHJvZCE=}

@@ -1,0 +1,21 @@
+# --- bí mật: KHÔNG BAO GIỜ commit ---
+.env
+secrets/
+*.pem
+*.key
+
+# --- frontend ---
+node_modules/
+dist/
+
+# --- backend ---
+target/
+data/
+*.log
+
+# --- IDE / OS ---
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db

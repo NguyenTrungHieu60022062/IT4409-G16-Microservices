@@ -1,0 +1,3 @@
+# Script shell phải giữ LF, nếu không sẽ lỗi khi chạy trong Docker/Linux
+*.sh   text eol=lf
+mvnw   text eol=lf

@@ -1,0 +1,11 @@
+# Profile "local": chạy thử KHÔNG cần Docker/PostgreSQL.
+#   ./mvnw spring-boot:run -Dspring-boot.run.profiles=local
+# Dữ liệu nằm trong ./data/ (đã .gitignore). KHÔNG dùng cho môi trường thật.
+spring:
+  datasource:
+    url: jdbc:h2:file:./data/auth;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH
+    username: sa
+    password: ""
+  h2:
+    console:
+      enabled: false   # H2 console cho phép chạy SQL tuỳ ý — không bao giờ bật trên server
